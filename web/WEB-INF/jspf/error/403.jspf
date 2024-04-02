@@ -1,0 +1,16 @@
+<%-- any content can be specified here e.g.: --%>
+
+<div class="row">
+    
+<div class="span12">
+    	
+<div style="align:center" class="wel breadcrumb">
+<br>
+    <span style="text-align:center"><fmt:message key="forbidden"/></span>
+    <br>
+    <br>
+    
+</div>
+
+</div>
+</div>

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>/WEB-INF/applicationContext.xml</param-value>
+    </context-param>
+    <context-param>
+        <description>The relative path to product images</description>
+        <param-name>productImagePath</param-name>
+        <param-value>img/products/</param-value>
+    </context-param>
+    <context-param>
+        <description>The relative path to category images</description>
+        <param-name>categoryImagePath</param-name>
+        <param-value>img/categories/</param-value>
+    </context-param>
+    <context-param>
+        <description>The delivery surcharge applied to all orders</description>
+        <param-name>deliveryCharge</param-name>
+        <param-value>4.50</param-value>
+    </context-param>
+    <context-param>
+        <param-name>javax.servlet.jsp.jstl.fmt.localizationContext</param-name>
+        <param-value>resources.messages</param-value>
+    </context-param>
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+    <servlet>
+        <servlet-name>dispatcher</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <load-on-startup>2</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>dispatcher</servlet-name>
+        <url-pattern>*.htm</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>10</session-timeout>
+    </session-config>
+    <!--    <error-page>
+        <error-code>403</error-code>
+        <location>/WEB-INF/jspf/error/403.jspf</location>
+    </error-page>
+    <error-page>
+        <error-code>404</error-code>
+        <location>/WEB-INF/jspf/error/404.jspf</location>
+    </error-page>
+    <error-page>
+        <error-code>500</error-code>
+        <location>/WEB-INF/jspf/error/500.jspf</location>
+    </error-page>-->
+    <!--    <welcome-file-list>
+        <welcome-file>redirect.jsp</welcome-file>
+    </welcome-file-list>-->
+    <jsp-config>
+        <jsp-property-group>
+            <description>header and footer settings</description>
+            <url-pattern>/index.jsp</url-pattern>
+            <url-pattern>/WEB-INF/jspf/error/*</url-pattern>
+            <url-pattern>/WEB-INF/view/*</url-pattern>
+            <include-prelude>/WEB-INF/jspf/header.jspf</include-prelude>
+            <include-coda>/WEB-INF/jspf/footer.jspf</include-coda>
+        </jsp-property-group>
+        <jsp-property-group>
+            <description>JSP configuration for the admin page</description>
+            <url-pattern>/admin/AddCategory.jsp</url-pattern>
+            <url-pattern>/admin/CateConfirmation.jsp</url-pattern>
+            <url-pattern>/admin/adSubcateConfirmation.jsp</url-pattern>
+            <url-pattern>/admin/deProConfirmation.jsp</url-pattern>
+            <url-pattern>/admin/addProConfirmation.jsp</url-pattern>
+            <url-pattern>/admin/successUploadImage.jsp</url-pattern>
+            <url-pattern>/admin/logout.jsp</url-pattern>
+            <url-pattern>/admin/AddProduct.jsp</url-pattern>
+            <url-pattern>/admin/dashboard.jsp</url-pattern>
+            <url-pattern>/admin/editSubConfirmation.jsp</url-pattern>
+            <url-pattern>/admin/deleteSubConfirmation.jsp</url-pattern>
+            <url-pattern>/admin/adCateConfirmation.jsp</url-pattern>
+            <url-pattern>/admin/AddSubcategory.jsp</url-pattern>
+            <url-pattern>/admin/EdProConfirmation.jsp</url-pattern>
+            <url-pattern>/admin/login.jsp</url-pattern>
+            <url-pattern>/admin/error.jsp</url-pattern>
+            <url-pattern>/user/loginCheckout.jsp</url-pattern>
+            <url-pattern>/admin/deCategoryConfirmation.jsp</url-pattern>
+            <include-prelude>/admin/jspf/header.jspf</include-prelude>
+            <include-coda>/admin/jspf/footer.jspf</include-coda>
+        </jsp-property-group>
+        <jsp-property-group>
+            <description>header and footer settings</description>
+            <url-pattern>/user/welcome.jsp</url-pattern>
+            <url-pattern>/user/login.jsp</url-pattern>
+            <url-pattern>/user/error.jsp</url-pattern>
+            <url-pattern>/user/logout.jsp</url-pattern>
+            <include-prelude>/user/jspf/header.jspf</include-prelude>
+            <include-coda>/user/jspf/footer.jspf</include-coda>
+        </jsp-property-group>
+    </jsp-config>
+    <!--    <security-constraint>
+        <display-name>Admin</display-name>
+        <web-resource-collection>
+            <web-resource-name> E-Shopper Administration</web-resource-name>
+            <description/>
+            <url-pattern>/admin/*</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <description/>
+            <role-name>eshopperAdmin</role-name>
+        </auth-constraint>
+    </security-constraint>-->
+    <login-config>
+        <auth-method>FORM</auth-method>
+        <realm-name>file</realm-name>
+        <form-login-config>
+            <form-login-page>/admin/login.jsp</form-login-page>
+            <form-error-page>/admin/error.jsp</form-error-page>
+        </form-login-config>
+    </login-config>
+    <!--    <security-role>
+        <description>E-shopper Site Administration Management</description>
+        <role-name>eshopperAdmin</role-name>
+    </security-role>-->
+</web-app>

@@ -1,0 +1,112 @@
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>E-shopper Framework</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Bootstrap styles -->
+    <link href="../css/bootstrap.css" rel="stylesheet"/>
+    
+    <!-- Customize styles -->
+    <link href="../css/style.css" rel="stylesheet"/>
+
+    <!-- font awesome styles -->
+    <link href="../font-awesome/css/font-awesome.css" rel="stylesheet">
+     
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="/e-commerce_Site/img/ico/icon.png">
+   <script src="../js/jqueryjs" type="text/javascript"></script>
+   <script src="../js/jquery-ui-1.8.4.custom.min.js" type="text/javascript"></script>
+    
+     <script type="text/javascript">
+            $(document).ready(function(){
+                $('tr.tableRow').hover(
+                    function () {
+                        $(this).addClass('selectedRow');
+                    },
+                    function () {
+                        $(this).removeClass('selectedRow');
+                    }
+                );
+             });
+      </script>
+</head>
+<body>
+<!-- 
+	Upper Header Section 
+-->
+<div class="navbar navbar-inverse navbar-fixed-top">
+	<div class="topNav">
+		<div class="container">
+			<div class="alignR">
+				<div class="pull-left socialNw">
+					<a href="#"><span class="icon-facebook"></span></a>
+                                        <a href="#"><span class="icon-twitter"></span></a>
+					<a href="#"><span class="icon-youtube"></span></a>
+                                       
+				</div>
+                            
+				<a href="<c:url value='/admin/'/>"> <span class="icon-home"></span> Home</a>
+                                
+				<a href="<c:url value='/admin/'/>"><span class="icon-user"></span> Admin Account</a> 
+                                
+<!--				<a href=""><span class="icon-edit"></span> Register </a> 
+                                
+				<a href="<c:url value='/contact'/>"><span class="icon-envelope"></span> Contact us</a>
+                     -->
+                    </div>
+		</div>
+	</div>
+</div>
+
+<!--
+Lower Header Section 
+-->
+<div class="container">
+<div id="gototop"> </div>
+<header id="header">
+<div class="row">
+	<div class="span4">
+            <div class="span7">
+             <h2 class="accordion">
+                 Administration Management
+             </h2>
+            
+	     </div>
+	</div>
+	<div class="span4">
+	<div class="span5">
+       </div>
+	</div>
+	<div class="span4 alignR">
+            <h3><a class="logo" style="color:black" href="<c:url value='/'/>">
+	      An Online <img src="../img/ico/ico-cart.png" alt="e-shopper"> Framework
+	</a></h3>
+        </div>
+</div>
+</header>
+
+<!--
+Navigation Bar Section 
+-->
+<div class="navbar">
+	  <div class="navbar-inner">
+		<div class="container">
+		  <div class="nav-collapse">
+			<ul class="nav">
+                            <li class="active"> <a href="<c:url value='/index.jsp'/>" class="navbar-brand"><strong>E-Shopper Site </strong></a></li>  
+			  <li class=""><a href="<c:url value='/admin/'/>"> Home</a></li>
+			  
+			  <li class=""><a href="#">Help</a></li>
+			</ul>
+		     
+		  </div>
+                          
+		</div>
+	  </div>
+	</div>
